@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Criar elemento</title>
+</head>
+<body>
+    <h1>Clique abaixo</h1>
+    <input type="button" value="Criar" id="btn">
+    <span id="span"></span>
+    
+
+    <script>
+       let btn =  document.getElementById('btn')
+       let span =  document.getElementById('span')
+      
+       btn.onclick = function criarQuadrado()
+       {
+          let quad = document.createElement('div')
+          let texto = document.createTextNode('Quadrado criado')
+
+           span.appendChild(quad)
+           quad.appendChild(texto)
+           
+           quad.style.backgroundColor = 'rgb(226, 43, 43)'
+           quad.style.width = '100px'
+           quad.style.height = '100px'
+           quad.style.marginTop = '10px'
+           
+           quad.onmouseover = function mudar(){
+               quad.style.backgroundColor = getRandomColor()
+           }
+       }
+    
+    
+  function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Criar lista</title>
+</head>
+<body>
+    <h1>Criar lista</h1>
+    <input type="text" name="input" id="input">
+    <input type="button" value="Adicionar" id="btn" onclick="addNome()">
+    <ul id="ul"></ul>
+
+
+<script>
+    let ul = document.getElementById('ul')
+    let input = document.getElementById('input')
+    let btn =  document.getElementById('btn')
+
+
+    var nomes = ['Viviane','Davy','Giovanna','Alice']
+
+  function renderLista(){
+    ul.innerHTML = ""
+    for (n of nomes)
+    {
+      let li = document.createElement('li')
+      let texto = document.createTextNode(n)
+      ul.appendChild(li)
+      li.appendChild(texto)
+    }
+    
+  }
+renderLista()
+
+  function addNome()
+  {
+    let nome = input.value 
+    nomes.push(nome)
+    renderLista()
+    input.value = "" 
+    
+  }
+
+
+</script>
+</body>
+</html>
