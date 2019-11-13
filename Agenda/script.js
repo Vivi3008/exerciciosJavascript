@@ -6,6 +6,14 @@ let ul =  document.getElementById('ul')
 
 var tarefas = JSON.parse(localStorage.getItem('list_tarefas')) || []
 
+document.addEventListener('keypress',function(e){
+    if (e.which==13) {
+      addTodos();
+    }else{
+      false
+    }
+  })
+
 function renderTodos()
 {
     ul.innerHTML=""
